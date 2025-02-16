@@ -52,9 +52,8 @@ class AdminBlogController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Blog $blog)
     {
-			$blog = Blog::findorFail($id);
 			return view('admin.blogs.edit', ['blog' => $blog]);
     }
 
