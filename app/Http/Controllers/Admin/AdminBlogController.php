@@ -12,7 +12,8 @@ class AdminBlogController extends Controller
     // ブログ一覧画面
     public function index()
     {
-        return view('admin.blogs.index');
+        $blogs = Blog::all();
+        return view('admin.blogs.index', ['blogs' => $blogs]);
     }
 
 
@@ -51,7 +52,8 @@ class AdminBlogController extends Controller
      */
     public function edit(string $id)
     {
-        //
+			$blog = Blog::findorFail($id);
+			return view('admin.blogs.edit', ['blog' => $blog]);
     }
 
     /**
