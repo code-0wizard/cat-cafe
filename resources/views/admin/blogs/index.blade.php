@@ -27,7 +27,7 @@
                                 <img class="w-12 h-12 mr-4 object-cover rounded-md" src="{{ asset('storage/'. $blog->image) }}" alt="">
                                 <p class="font-medium"><a href="{{ route('admin.blogs.edit', ['blog' => $blog]) }}">{{ $blog->title }}</a></p>
                             </td>
-                            <td class="font-medium">成長</td>
+                            <td class="font-medium">{{ $blog->category->name }}</td>
                             <td class="font-medium">高橋</td>
                             <td>{{ $blog->updated_at }}</td>
                             <td>
