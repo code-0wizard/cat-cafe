@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\StoreBlogRequest;
 use App\Http\Requests\Admin\UpdateBlogRequest;
 use App\Models\Blog;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,8 +16,9 @@ class AdminBlogController extends Controller
     // ブログ一覧画面
     public function index()
     {
+        $user = Auth::user();
         $blogs = Blog::latest('updated_at')->simplePaginate(10);
-        return view('admin.blogs.index', ['blogs' => $blogs]);
+        return view('admin.blogs.index', ['blogs' => $blogs, 'user' => $user]);
     }
 
 

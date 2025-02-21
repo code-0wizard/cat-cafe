@@ -109,8 +109,8 @@
         <!-- ▼▼▼▼共通ヘッダー(PC)▼▼▼▼　-->
         <section class="py-5 px-6 bg-white shadow hidden lg:block">
             <div class="flex items-center justify-end">
-                <span class="text-sm text-gray-500">店長</span>
-                <img class="ml-3 w-10 h-10 rounded-full object-cover object-right" src="/images/placeholders/admin/user.jpg" alt="">
+                <span class="text-sm text-gray-500">{{ $user->name }}</span>
+                <img class="ml-3 w-10 h-10 rounded-full object-cover object-right" src="{{ asset('storage/' . $user->image) }}" alt="">
             </div>
         </section>
         <!-- ▲▲▲▲共通ヘッダー(PC)▲▲▲▲　-->
